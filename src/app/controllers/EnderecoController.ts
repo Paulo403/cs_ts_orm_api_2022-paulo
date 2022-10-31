@@ -41,7 +41,26 @@ class EnderecoController {
             return res.sendStatus(500);
         }
 
+    }
+
+    async update(req: Request, res: Response){
+
+        const repository = getRepository(Endereco);//recupera o repositorio do jogador.
+    
+        const {id} = req.body;//extrai os atributos nickname e endereco do corpo da mensagem.
+    
+        const enderecoExists = await repository.findOne({where:{"id": id}})//!!!
+        
+        if(!enderecoExists){
+            return res.sendStatus(404);
         }
+        
+        const e = repository.create(req.body); //cria a entidade Jogador
+        
+        await repository.save(e); //persiste (update) a entidade na tabela.
+        
+        return res.json(e);
+    }
 }
 
 export default new EnderecoController();

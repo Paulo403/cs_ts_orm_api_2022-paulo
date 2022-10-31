@@ -9,10 +9,10 @@ class JogadorController {
 
         const repository = getRepository(Jogador);
         //retorna uma lista de objetos contendo os registros de tb_jogador
-        const lista = await repository.find();
+        // const lista = await repository.find()
 
         //retorna uma lsita de objetos contendos os registros de tb_jogador e mais as vinculações com tb_endereco, caso exista.
-        //const lista = await repository.createQueryBuilder('tb_jogador').innerJoinAndSelect("tb_jogador.endereco", "endereco").getMany();
+        const lista = await repository.createQueryBuilder('tb_jogador').innerJoinAndSelect("tb_jogador.endereco", "endereco").getMany();
 
         return res.json(lista);
     }
@@ -68,10 +68,10 @@ class JogadorController {
         const {nickname, endereco} = req.body;//extrai os atributos nickname e endereco do corpo da mensagem.
     
         const nicknameExists = await repository.findOne({where :{nickname}});//consulta na tabela se existe um registro com o mesmo nickname da mensagem.
-        const enderecoExists = await getRepository(Endereco).findOne({where : {"id" : endereco.id}});//consulta na tabela se existe um registro com o mesmo endereco da mensagem.
+        const enderecoExists = await getRepository(Endereco).findOne({where : {"id" : endereco}});//consulta na tabela se existe um registro com o mesmo endereco da mensagem.
         
-        if(!endereco || !nicknameExists || !enderecoExists){
-                return res.sendStatus(404);
+        if(!nicknameExists || !enderecoExists){
+            return res.sendStatus(404);
         }
         
         const j = repository.create(req.body); //cria a entidade Jogador

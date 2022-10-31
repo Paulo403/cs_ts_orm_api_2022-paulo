@@ -1,1 +1,0 @@
-# cs_ts_orm_api_2022-paulo

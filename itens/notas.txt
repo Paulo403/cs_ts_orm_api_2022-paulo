@@ -1,0 +1,63 @@
+Lembrar de alterar a senha do bd
+
+JOGADOR 
+    STORE 
+        controller OK
+        request OK
+    LIST
+        controller OK
+        request OK
+    DELETE
+        controller OK
+        request OK
+    UPDATE
+        controller OK
+        request OK
+
+ENDERECO
+    STORE 
+        controller OK
+        request OK
+    LIST
+        controller OK
+        request OK
+    DELETE
+        controller OK
+        request OK
+    UPDATE
+        controller OK
+        request OK
+
+PATENTE
+    STORE
+        controller OK
+        request OK
+    LIST
+        controller OK
+        request OK
+    DELETE
+        controller OK
+        request OK
+    UPDATE
+        controller OK
+        request OK
+
+_______________________________________
+
+não lista jogadores sem endereço
+
+_______________________________________
+
+
+
+    /\___/\
+   /       \
+  l  u   u  l
+--l----*----l--
+   \   w   /     
+     ======
+   /       \ __
+   l        l\ \
+   l        l/ /   
+   l  l l   l /
+   \ ml lm /_/
