@@ -1,5 +1,7 @@
 Lembrar de alterar a senha do bd
 
+01/11 00:16
+
 JOGADOR 
     STORE 
         controller OK
@@ -42,12 +44,26 @@ PATENTE
         controller OK
         request OK
 
+MODELS
+    artefato OK
+    compra OK
+    endereco OK
+    jogador OK
+    objetivo OK 
+    partida OK
+    patente OK
+    resultado OK
+    round OK
+    itenscompra OK
+    mapa OK
+    local OK
+    arma_municao
+    mapa_local
+    objetivo_local
+    jogador_artefato 
+    jogador_patente
+
 _______________________________________
-
-não lista jogadores sem endereço
-
-_______________________________________
-
 
 
     /\___/\
