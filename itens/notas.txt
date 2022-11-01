@@ -1,6 +1,6 @@
 Lembrar de alterar a senha do bd
 
-01/11 00:16
+01/11 14:06
 
 JOGADOR 
     STORE 
@@ -57,11 +57,13 @@ MODELS
     itenscompra OK
     mapa OK
     local OK
-    arma_municao
-    mapa_local
-    objetivo_local
-    jogador_artefato 
-    jogador_patente
+    arma_municao OK
+    mapa_local OK
+    objetivo_local OK
+    jogador_artefato OK
+    jogador_patente OK
+
+    todos estão funcionando, mas podem ser dinamizados
 
 _______________________________________
 

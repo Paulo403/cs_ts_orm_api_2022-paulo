@@ -1,6 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, TableInheritance} from 'typeorm';
 @Entity('tb_artefato')
-class Artefato {
+@TableInheritance({ column: { type: "varchar", name: "type" } })
+export default abstract class Artefato {
     @PrimaryGeneratedColumn()//geracao automatica de chave primaria
     id: number;
 
@@ -13,4 +14,3 @@ class Artefato {
     @Column("float")
     valor: number;
 }
-export default Artefato;
