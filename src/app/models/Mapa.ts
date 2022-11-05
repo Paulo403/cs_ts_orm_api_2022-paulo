@@ -1,10 +1,14 @@
-import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable} from 'typeorm';
+import Local from '../models/Local';
 @Entity('tb_mapa')
-class Mapa {
+export default class Mapa {
     @PrimaryGeneratedColumn()//geracao automatica de chave primaria
     id: number;
 
     @Column("text")
     nome: string;
+
+    @ManyToMany(() => Local)
+    @JoinTable({name : "tb_mapa_local", joinColumn: {name:"mapa_id", referencedColumnName: "id"}, inverseJoinColumn: {name:"local_id", referencedColumnName: "id"}})
+    locais: Local[];
 }
-export default Mapa;

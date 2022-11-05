@@ -1,6 +1,8 @@
 Lembrar de alterar a senha do bd
 
-01/11 14:06
+FALTAM OS REQUESTS RELACIONAIS
+
+05-11-22 00:29
 
 JOGADOR 
     STORE 
@@ -62,8 +64,6 @@ MODELS
     objetivo_local OK
     jogador_artefato OK
     jogador_patente OK
-
-    todos estão funcionando, mas podem ser dinamizados
 
 _______________________________________
 
