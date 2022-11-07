@@ -43,6 +43,17 @@ class EnderecoController {
 
     }
 
+    async find(req: Request, res: Response){
+        const repository = getRepository(Endereco);
+        const {cep} = req.body;
+        const end = await repository.findOne({where : {cep}});
+        if(end){
+         return res.json(end);
+        }else{
+            return res.sendStatus(404);
+        }
+    }
+
     async update(req: Request, res: Response){
 
         const repository = getRepository(Endereco);//recupera o repositorio do jogador.

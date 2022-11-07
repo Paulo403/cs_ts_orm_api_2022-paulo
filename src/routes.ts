@@ -15,7 +15,9 @@ router.delete('/jogadores', JogadorController.delete);//define uma rota ...
 router.post('/enderecos', EnderecoController.store);//define uma rota vai método post para chamar o método store da classe EnderecoController
 router.get('/enderecos', EnderecoController.list);//define uma rota ...
 router.delete('/enderecos', EnderecoController.delete);//define uma rota ...
-router.put('/enderecos', EnderecoController.update)
+router.put('/enderecos', EnderecoController.update);
+router.post('/enderecos/find', EnderecoController.find);
+router.post('/enderecos/delete', EnderecoController.delete);
 
 // criando rotas para /patentes
 router.post('/patentes', PatenteController.store);

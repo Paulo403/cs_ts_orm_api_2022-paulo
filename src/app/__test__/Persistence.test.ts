@@ -14,7 +14,7 @@ describe("persistence test", () => {
     });
 
 
-    it('teste /endereco/list e /endereco/delete', async () => {
+    it('teste /enderecos/list e /enderecos/delete', async () => {
         var agent = supertest(app);
         const postList = await agent.get('/enderecos');
         expect(postList.statusCode).toEqual(200);
@@ -44,7 +44,7 @@ describe("persistence test", () => {
     });
 
 
-    it('teste /jogador/list e /jogador/delete', async () => {
+    it('teste /jogadores/list e /jogadores/delete', async () => {
         var agent = supertest(app);
         const ret = await agent.get('/jogadores');
         expect(ret.statusCode).toEqual(200);
