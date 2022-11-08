@@ -13,6 +13,34 @@ describe("persistence test", () => {
         await setup()
     });
 
+    it('teste /patentes/list e /patentes/delete', async () => {
+        var agent = supertest(app);
+        const postList = await agent.get('/patentes');
+        expect(postList.statusCode).toEqual(200);
+        if (postList.body.length > 0){
+        for(const p of postList.body){
+           
+            const data = { "id" : p.id };
+            console.log("Encontrou a patente: ");
+            console.log(data);
+            
+            const postDelete = await agent.delete('/patentes').send(data);
+            
+            console.log("Removeu a patente: ");
+            console.log(data);
+
+            expect(postDelete.statusCode).toEqual(204);
+        }
+        }else{
+            const data = { "nome" : "Patente de testes", "cor" :"Patente de testes" };
+            const postCreate = await agent.post('/patentes').send(data);
+            
+            console.log("Cadastrou a patente: ");
+            console.log(postCreate);
+
+            expect(postCreate.statusCode).toEqual(200);
+        }
+    });
 
     it('teste /enderecos/list e /enderecos/delete', async () => {
         var agent = supertest(app);
@@ -78,7 +106,7 @@ describe("persistence test", () => {
             const data = {"nickname": "t@g1.com",
                           "senha": "11111",
                           "pontos": 10,
-                          "endereco" : postFindEndereco.body[0]
+                          "endereco" : [{"id":postFindEndereco.body[0]}]
                         };
 
             const postCreateJogador = await agent.post('/jogadores').send(data);

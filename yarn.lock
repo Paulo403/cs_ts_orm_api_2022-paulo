@@ -330,7 +330,7 @@
     "jest-util" "^27.5.1"
     "slash" "^3.0.0"
 
-"@jest/core@^27.4.3", "@jest/core@^27.5.1":
+"@jest/core@^27.5.1":
   "integrity" "sha512-AK6/UTrvQD0Cd24NSqmIA6rKsu0tKIxfiCducZvqxYdmMisOYAsdItspT+fQDQYARPf8XgjAFZi0ogW2agH5nQ=="
   "resolved" "https://registry.npmjs.org/@jest/core/-/core-27.5.1.tgz"
   "version" "27.5.1"
@@ -690,12 +690,12 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^27.0.0", "@types/jest@^27.0.3":
-  "integrity" "sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg=="
-  "resolved" "https://registry.npmjs.org/@types/jest/-/jest-27.0.3.tgz"
-  "version" "27.0.3"
+"@types/jest@^27.0.0", "@types/jest@^27.5.2":
+  "integrity" "sha512-mpT8LJJ4CMeeahobofYWIjFo0xonRS/HfxnVEPMPFSQdGUt1uHCnoPT7Zhb+sjDU2wz0oKV0OLUR0WzrHNgfeA=="
+  "resolved" "https://registry.npmjs.org/@types/jest/-/jest-27.5.2.tgz"
+  "version" "27.5.2"
   dependencies:
-    "jest-diff" "^27.0.0"
+    "jest-matcher-utils" "^27.0.0"
     "pretty-format" "^27.0.0"
 
 "@types/jsonwebtoken@8.5.5":
@@ -751,10 +751,10 @@
     "@types/cookiejar" "*"
     "@types/node" "*"
 
-"@types/supertest@^2.0.11":
-  "integrity" "sha512-uci4Esokrw9qGb9bvhhSVEjd6rkny/dk5PK/Qz4yxKiyppEI+dOPlNrZBahE3i+PoKFYyDxChVXZ/ysS/nrm1Q=="
-  "resolved" "https://registry.npmjs.org/@types/supertest/-/supertest-2.0.11.tgz"
-  "version" "2.0.11"
+"@types/supertest@^2.0.12":
+  "integrity" "sha512-X3HPWTwXRerBZS7Mo1k6vMVR1Z6zmJcDVn5O/31whe0tnjE4te6ZJSJGq1RiqHPjzPdMTfjCFogDJmwng9xHaQ=="
+  "resolved" "https://registry.npmjs.org/@types/supertest/-/supertest-2.0.12.tgz"
+  "version" "2.0.12"
   dependencies:
     "@types/superagent" "*"
 
@@ -1569,38 +1569,6 @@
   dependencies:
     "is-arrayish" "^0.2.1"
 
-"esbuild-windows-64@0.14.54":
-  "integrity" "sha512-AoHTRBUuYwXtZhjXZbA1pGfTo8cJo3vZIcWGLiUcTNgHpJJMC1rVA44ZereBHMJtotyN71S8Qw0npiCIkW96cQ=="
-  "resolved" "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.14.54.tgz"
-  "version" "0.14.54"
-
-"esbuild@~0.14.0":
-  "integrity" "sha512-Cy9llcy8DvET5uznocPyqL3BFRrFXSVqbgpMJ9Wz8oVjZlh/zUSNbPRbov0VX7VxN2JH1Oa0uNxZ7eLRb62pJA=="
-  "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.14.54.tgz"
-  "version" "0.14.54"
-  optionalDependencies:
-    "@esbuild/linux-loong64" "0.14.54"
-    "esbuild-android-64" "0.14.54"
-    "esbuild-android-arm64" "0.14.54"
-    "esbuild-darwin-64" "0.14.54"
-    "esbuild-darwin-arm64" "0.14.54"
-    "esbuild-freebsd-64" "0.14.54"
-    "esbuild-freebsd-arm64" "0.14.54"
-    "esbuild-linux-32" "0.14.54"
-    "esbuild-linux-64" "0.14.54"
-    "esbuild-linux-arm" "0.14.54"
-    "esbuild-linux-arm64" "0.14.54"
-    "esbuild-linux-mips64le" "0.14.54"
-    "esbuild-linux-ppc64le" "0.14.54"
-    "esbuild-linux-riscv64" "0.14.54"
-    "esbuild-linux-s390x" "0.14.54"
-    "esbuild-netbsd-64" "0.14.54"
-    "esbuild-openbsd-64" "0.14.54"
-    "esbuild-sunos-64" "0.14.54"
-    "esbuild-windows-32" "0.14.54"
-    "esbuild-windows-64" "0.14.54"
-    "esbuild-windows-arm64" "0.14.54"
-
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
@@ -2247,7 +2215,7 @@
     "stack-utils" "^2.0.3"
     "throat" "^6.0.1"
 
-"jest-cli@^27.4.3":
+"jest-cli@^27.5.1":
   "integrity" "sha512-Hc6HOOwYq4/74/c62dEE3r5elx8wjYqxY0r0G/nFrLDPMFRu6RA/u8qINOIkvhxG7mMQ5EJsOGfRpI8L6eFUVw=="
   "resolved" "https://registry.npmjs.org/jest-cli/-/jest-cli-27.5.1.tgz"
   "version" "27.5.1"
@@ -2295,7 +2263,7 @@
     "slash" "^3.0.0"
     "strip-json-comments" "^3.1.1"
 
-"jest-diff@^27.0.0", "jest-diff@^27.5.1":
+"jest-diff@^27.5.1":
   "integrity" "sha512-m0NvkX55LDt9T4mctTEgnZk3fmEg3NRYutvMPWM/0iPnkFj2wIeF45O1718cMSOFO1vINkqmxqD8vE37uTEbqw=="
   "resolved" "https://registry.npmjs.org/jest-diff/-/jest-diff-27.5.1.tgz"
   "version" "27.5.1"
@@ -2404,7 +2372,7 @@
     "jest-get-type" "^27.5.1"
     "pretty-format" "^27.5.1"
 
-"jest-matcher-utils@^27.5.1":
+"jest-matcher-utils@^27.0.0", "jest-matcher-utils@^27.5.1":
   "integrity" "sha512-z2uTx/T6LBaCoNWNFWwChLBKYxTMcGBRjAt+2SbP929/Fflb9aa5LGma654Rz8z9HLxsrUaYzxE9T/EFIL/PAw=="
   "resolved" "https://registry.npmjs.org/jest-matcher-utils/-/jest-matcher-utils-27.5.1.tgz"
   "version" "27.5.1"
@@ -2609,14 +2577,14 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^8.0.0"
 
-"jest@^27.0.0", "jest@^27.4.3":
-  "integrity" "sha512-jwsfVABBzuN3Atm+6h6vIEpTs9+VApODLt4dk2qv1WMOpb1weI1IIZfuwpMiWZ62qvWj78MvdvMHIYdUfqrFaA=="
-  "resolved" "https://registry.npmjs.org/jest/-/jest-27.4.3.tgz"
-  "version" "27.4.3"
+"jest@^27.0.0", "jest@^27.5.1":
+  "integrity" "sha512-Yn0mADZB89zTtjkPJEXwrac3LHudkQMR+Paqa8uxJHCBr9agxztUifWCyiYrjhMPBoUVBjyny0I7XH6ozDr7QQ=="
+  "resolved" "https://registry.npmjs.org/jest/-/jest-27.5.1.tgz"
+  "version" "27.5.1"
   dependencies:
-    "@jest/core" "^27.4.3"
+    "@jest/core" "^27.5.1"
     "import-local" "^3.0.2"
-    "jest-cli" "^27.4.3"
+    "jest-cli" "^27.5.1"
 
 "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
@@ -3685,7 +3653,7 @@
   dependencies:
     "charset" "^1.0.1"
 
-"supertest@6.1.6":
+"supertest@^6.1.6":
   "integrity" "sha512-0hACYGNJ8OHRg8CRITeZOdbjur7NLuNs0mBjVhdpxi7hP6t3QIbOzLON5RTUmZcy2I9riuII3+Pr2C7yztrIIg=="
   "resolved" "https://registry.npmjs.org/supertest/-/supertest-6.1.6.tgz"
   "version" "6.1.6"
@@ -3831,13 +3799,12 @@
   dependencies:
     "punycode" "^2.1.1"
 
-"ts-jest@^27.1.0":
-  "integrity" "sha512-ZouWlP03JMtzfNHg0ZeDrxAESYGmVhWyHtIl2/01kBbXaMbTr4Vhv6/GeMxUed6GFg/4ycMo+yU6Eo9gI16xTQ=="
-  "resolved" "https://registry.npmjs.org/ts-jest/-/ts-jest-27.1.0.tgz"
-  "version" "27.1.0"
+"ts-jest@^27.1.5":
+  "integrity" "sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA=="
+  "resolved" "https://registry.npmjs.org/ts-jest/-/ts-jest-27.1.5.tgz"
+  "version" "27.1.5"
   dependencies:
     "bs-logger" "0.x"
-    "esbuild" "~0.14.0"
     "fast-json-stable-stringify" "2.x"
     "jest-util" "^27.0.0"
     "json5" "2.x"
@@ -3846,7 +3813,7 @@
     "semver" "7.x"
     "yargs-parser" "20.x"
 
-"ts-node@>=9.0.0", "ts-node@10.4.0":
+"ts-node@^10.4.0", "ts-node@>=9.0.0":
   "integrity" "sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A=="
   "resolved" "https://registry.npmjs.org/ts-node/-/ts-node-10.4.0.tgz"
   "version" "10.4.0"

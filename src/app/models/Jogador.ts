@@ -29,7 +29,11 @@ class Jogador {
     endereco: Endereco;   
 
     @ManyToMany(() => Patente)
-    @JoinTable({name : "tb_jogador_patente", joinColumn: {name:"jogador_nickname", referencedColumnName: "nickname"}, inverseJoinColumn: {name:"patente_id", referencedColumnName: "id"}})
+    @JoinTable({name : "tb_jogador_patente", 
+                joinColumn: {name: "jogador_nickname", 
+                             referencedColumnName: "nickname"}, 
+                inverseJoinColumn: {name: "patente_id", 
+                                    referencedColumnName: "id"}})
     patentes: Patente[];
 
     @ManyToMany(() => Artefato)

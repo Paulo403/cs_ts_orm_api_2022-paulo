@@ -3,7 +3,7 @@
     "host": "localhost",
     "port": 5432,
     "username": "postgres",
-    "password": "0403",
+    "password": "postgres",
     "database": "db_cs_ts_orm_api_2022_paulo",
     "synchronize": true,
     "logging": false,
