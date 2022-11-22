@@ -27,7 +27,7 @@ router.delete('/patentes', PatenteController.delete);
 router.put('/patentes', PatenteController.update);
 
 // criando rotas para login
-router.post('/jogadores', LoginController.post);
+router.post('/jogadores/login', LoginController.post);
 
 export default router;
 

@@ -1,8 +1,6 @@
-Lembrar de alterar a senha do bd
+Ajeitar testes
 
-TESTE JOGADOR NÃO FUNCIONA
-
-08-11-22 15:42
+22-11-22 15:38
 
 JOGADOR 
     STORE 

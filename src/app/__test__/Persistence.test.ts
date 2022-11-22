@@ -61,16 +61,22 @@ describe("persistence test", () => {
             expect(postDelete.statusCode).toEqual(204);
         }
         }else{
-            const data = { "cep" : "Endereco de testes", "complemento" :"402" };
+            const data = { "cep" : "Endereco", "complemento" :"402" };
             const postCreate = await agent.post('/enderecos').send(data);
             
             console.log("Cadastrou o endereco: ");
             console.log(postCreate);
 
             expect(postCreate.statusCode).toEqual(200);
+
+            const postDelete = await agent.delete('/endereco').send(data);
+            
+            console.log("Removeu o endereco: ");
+            console.log(data);
+
+            expect(postDelete.statusCode).toEqual(204);
         }
     });
-
 
     it('teste /jogadores/list e /jogadores/delete', async () => {
         var agent = supertest(app);
@@ -88,21 +94,21 @@ describe("persistence test", () => {
                 expect(postDeleteJogador.statusCode).toEqual(204);
                 //esse remocao pode gerar alguma violacao de chave, caso o endereco esteja sendo referenciado por outro jogador.
                 //ou aplicar a estratégia de cascade no ManytoOne
-                if(typeof p.endereco != 'undefined'){
+                if(typeof p.jogador != 'undefined'){
 
-                    console.log(`Removendo o endereco ${p.endereco.id}.`);
-                    const postDeleteEndereco = await agent.delete('/enderecos').send({ "id" : p.endereco.id});
-                    expect(postDeleteEndereco.statusCode).toEqual(204);
+                    console.log(`Removendo o jogador ${p.jogador.nickname}.`);
+                    const postDeleteJogador = await agent.delete('/jogadores').send({ "nickname" : p.jogador.nickname});
+                    expect(postDeleteJogador.statusCode).toEqual(204);
                 }
                 
             }
         }else{
             console.log("Não encontrou jogadores cadastrados, cadastrando novo jogador e endereco.");
-            const postCreateEndereco = await agent.post('/enderecos').send({"cep" : "99010010"});
+            const postCreateEndereco = await agent.post('/enderecos').send({"cep" : "99010010", "complemento" : "casa"});
             expect(postCreateEndereco.statusCode).toEqual(200);
-            const postFindEndereco = await agent.get('/enderecos').send({"cep" : "99010010"});
+            const postFindEndereco = await agent.get('/enderecos').send({"cep" : "99010010", "complemento" : "casa"});
             expect(postFindEndereco.statusCode).toEqual(200);
-            //console.log(postFindEndereco.body);
+            console.log(postFindEndereco.body);
             const data = {"nickname": "t@g1.com",
                           "senha": "11111",
                           "pontos": 10,
@@ -111,6 +117,13 @@ describe("persistence test", () => {
 
             const postCreateJogador = await agent.post('/jogadores').send(data);
             expect(postCreateJogador.statusCode).toEqual(200);
+
+            const postDeleteJogador = await agent.delete('/jogadores').send(data);
+            
+            console.log("Removeu o jogador: ");
+            console.log(data);
+
+            expect(postDeleteJogador.statusCode).toEqual(204);
         }
         });
 
