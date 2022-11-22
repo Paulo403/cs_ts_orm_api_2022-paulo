@@ -2,6 +2,7 @@ import {Router} from 'express';
 import JogadorController from  './app/controllers/JogadorController';
 import EnderecoController from './app/controllers/EnderecoController';
 import PatenteController from './app/controllers/PatenteController';
+import LoginController from './app/controllers/LoginController';
 
 const router = Router();
 
@@ -24,6 +25,9 @@ router.post('/patentes', PatenteController.store);
 router.get('/patentes', PatenteController.list);
 router.delete('/patentes', PatenteController.delete);
 router.put('/patentes', PatenteController.update);
+
+// criando rotas para login
+router.post('/jogadores', LoginController.post);
 
 export default router;
 
