@@ -13,7 +13,7 @@ describe("persistence test", () => {
         await setup()
     });
 
-    it('teste /patentes/list e /patentes/delete', async () => {
+    it('testes /patentes/list e /patentes/delete', async () => {
         var agent = supertest(app);
         const postList = await agent.get('/patentes');
         expect(postList.statusCode).toEqual(200);
@@ -42,7 +42,7 @@ describe("persistence test", () => {
         }
     });
 
-    it('teste /enderecos/list e /enderecos/delete', async () => {
+    it('testes /enderecos/list e /enderecos/delete', async () => {
         var agent = supertest(app);
         const postList = await agent.get('/enderecos');
         expect(postList.statusCode).toEqual(200);
@@ -78,7 +78,7 @@ describe("persistence test", () => {
         }
     });
 
-    it('teste /jogadores/list e /jogadores/delete', async () => {
+    it('testes /jogadores/list e /jogadores/delete', async () => {
         var agent = supertest(app);
         const ret = await agent.get('/jogadores');
         expect(ret.statusCode).toEqual(200);
@@ -92,8 +92,6 @@ describe("persistence test", () => {
                 console.log(`Removendo o jogador ${data.nickname}.`);
                 const postDeleteJogador = await agent.delete('/jogadores').send(data);
                 expect(postDeleteJogador.statusCode).toEqual(204);
-                //esse remocao pode gerar alguma violacao de chave, caso o endereco esteja sendo referenciado por outro jogador.
-                //ou aplicar a estratégia de cascade no ManytoOne
                 if(typeof p.jogador != 'undefined'){
 
                     console.log(`Removendo o jogador ${p.jogador.nickname}.`);
@@ -103,16 +101,24 @@ describe("persistence test", () => {
                 
             }
         }else{
-            console.log("Não encontrou jogadores cadastrados, cadastrando novo jogador e endereco.");
+            console.log("Não encontrou jogadores cadastrados, cadastrando novo jogador, endereco e patente.");
+
             const postCreateEndereco = await agent.post('/enderecos').send({"cep" : "99010010", "complemento" : "casa"});
             expect(postCreateEndereco.statusCode).toEqual(200);
             const postFindEndereco = await agent.get('/enderecos').send({"cep" : "99010010", "complemento" : "casa"});
             expect(postFindEndereco.statusCode).toEqual(200);
+
+            const postCreatePatente = await agent.post('/patentes').send({"nome" : "patente de teste", "cor" : "cor de teste"});
+            expect(postCreatePatente.statusCode).toEqual(200);
+            const postFindPatente = await agent.get('/patentes').send({"nome" : "patente de teste", "cor" : "cor de teste"});
+            expect(postFindPatente.statusCode).toEqual(200);
+
             console.log(postFindEndereco.body);
             const data = {"nickname": "t@g1.com",
                           "senha": "11111",
                           "pontos": 10,
-                          "endereco" : [{"id":postFindEndereco.body[0]}]
+                          "endereco" : [{"id":postFindEndereco.body[0]}],
+                          "patente" : [{"id":postFindPatente.body[0]}]
                         };
 
             const postCreateJogador = await agent.post('/jogadores').send(data);
