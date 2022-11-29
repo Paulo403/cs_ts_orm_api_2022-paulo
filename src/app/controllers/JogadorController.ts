@@ -12,7 +12,7 @@ class JogadorController {
         // const lista = await repository.find()
 
         //retorna uma lsita de objetos contendos os registros de tb_jogador e mais as vinculações com tb_endereco, caso exista.
-        const lista = await repository.createQueryBuilder('tb_jogador').innerJoinAndSelect("tb_jogador.endereco", "endereco").leftJoinAndSelect("tb_jogador.patentes", "patente").getMany();
+        const lista = await repository.createQueryBuilder('tb_jogador').leftJoinAndSelect("tb_jogador.endereco", "endereco").leftJoinAndSelect("tb_jogador.patentes", "patente").getMany();
 
         return res.json(lista);
     }
